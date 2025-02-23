@@ -17,7 +17,7 @@ export class UserModel {
     public async addUser(body: CreateUserBody){
         try {
             const query = 'INSERT INTO usuarios(nombres, apellidoPaterno, apellidoMaterno, direccion, telefono) VALUES($1, $2, $3, $4, $5) RETURNING *;'
-            const values = [body.names, body.paternalLastName, body.maternalLastName, body.address, body.phone];
+            const values = [body.nombres, body.apellidopaterno, body.apellidomaterno, body.direccion, body.telefono];
             const res = await this.db.query(query, values);
             return res.rowCount;
         } catch(error){
@@ -29,7 +29,7 @@ export class UserModel {
         try{
             const query = 'UPDATE usuarios SET nombres=$1, apellidoPaterno=$2, apellidoMaterno=$3, direccion=$4, telefono=$5 WHERE idUsuario=$6';
 
-            const values = [body.names, body.paternalLastName, body.maternalLastName, body.address, body.phone, body.userId];
+            const values = [body.nombres, body.apellidopaterno, body.apellidomaterno, body.direccion, body.telefono, body.idusuario];
             const res = await this.db.query(query, values);
             return res.rowCount;
         } catch(error){

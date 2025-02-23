@@ -3,15 +3,12 @@ import { PostgresDatabase } from "./data";
 import { AppRoutes } from "./presentation/routes";
 import { Server } from "./presentation/server";
 
-console.log("Hello world");
-
 (async()=>{
     await main();
 })();
 
 async function main() {
     const dbInstance = PostgresDatabase.getInstance();
-    console.log(envs)
     await dbInstance.connect({
         user:envs.USER,
         database: envs.DB,

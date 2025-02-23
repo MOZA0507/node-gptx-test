@@ -1,16 +1,16 @@
 export interface CreateUserBody {
-    names: string;
-    paternalLastName: string;
-    maternalLastName: string;
-    address: string;
-    phone: string; 
+    nombres: string;
+    apellidopaterno: string;
+    apellidomaterno: string;
+    direccion: string;
+    telefono: string; 
 }
 
 export interface EditUserBody {
-    userId: number;
-    names: string;
-    paternalLastName: string;
-    maternalLastName: string;
-    address: string;
-    phone: string; 
+    idusuario: number;
+    nombres: string;
+    apellidopaterno: string;
+    apellidomaterno: string;
+    direccion: string;
+    telefono: string; 
 }
