@@ -17,20 +17,20 @@ export class UsersController{
 
     addUser = (req: Request, res: Response) => {
         this.usersService.createUser(req.body)
-            .then((data) => res.status(201).json({message: data}))
+            .then((data) => res.status(201).json({statusCode:201, message: data}))
             .catch(err => this.handleError(err,res));
     }
 
     editUser = (req: Request, res: Response) => {
         this.usersService.editUser(req.body)
-            .then((data) => res.status(200).json({message: data}))
+            .then((data) => res.status(200).json({statusCode:200, message: data}))
             .catch(err => this.handleError(err,res));
     }
 
     deleteUser = (req: Request, res: Response) => {
         const userId: number = +req.params.userId;
         this.usersService.deleteUser(userId)
-            .then((data) => res.status(200).json({message: data}))
+            .then((data) => res.status(200).json({statusCode:200, message: data}))
             .catch(err => this.handleError(err,res));
     }
 }
